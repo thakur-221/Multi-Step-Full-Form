@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Step Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="step active" id="step-1">1<br><span>Your Info</span></div>
+      <div class="step" id="step-2">2<br><span>Select Plan</span></div>
+      <div class="step" id="step-3">3<br><span>Add-Ons</span></div>
+      <div class="step" id="step-4">4<br><span>Summary</span></div>
+    </div>
+
+    <div class="form-content">
+      <!-- Step 1 -->
+      <div class="form-step active" id="form-step-1">
+        <h2>Personal Info</h2>
+        <p>Please provide your name, email, and phone number.</p>
+        <input type="text" placeholder="Name" /><br />
+        <input type="email" placeholder="Email" /><br />
+        <input type="text" placeholder="Phone Number" /><br />
+        <button onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step" id="form-step-2">
+        <h2>Select Plan</h2>
+        <label><input type="radio" name="plan" value="Basic Plan" /> Basic Plan</label><br />
+        <label><input type="radio" name="plan" value="Premium Plan" /> Premium Plan</label><br />
+        <label><input type="radio" name="plan" value="Ultimate Plan" /> Ultimate Plan</label><br />
+        <button onclick="prevStep()">Back</button>
+        <button onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step" id="form-step-3">
+        <h2>Add-Ons</h2>
+        <label><input type="checkbox" name="addons" value="Extra Storage" /> Extra Storage</label><br />
+        <label><input type="checkbox" name="addons" value="Custom Themes" /> Custom Themes</label><br />
+        <label><input type="checkbox" name="addons" value="Priority Support" /> Priority Support</label><br />
+        <button onclick="prevStep()">Back</button>
+        <button onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="form-step" id="form-step-4">
+        <h2>Summary</h2>
+        <div id="summary">
+          <!-- This will be filled dynamically by JS -->
+        </div>
+        <button onclick="prevStep()">Back</button>
+        <button onclick="alert('Form submitted!')">Submit</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+  Made Under Prodesk IT Internship By Sumit
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
